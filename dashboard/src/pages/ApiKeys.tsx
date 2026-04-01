@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import {
   useReactTable,
   getCoreRowModel,
@@ -116,8 +116,7 @@ export function ApiKeys() {
   };
 
   // Define columns using TanStack Table
-  const columns = useMemo(
-    () => [
+  const columns = [
       columnHelper.accessor('name', {
         header: 'Name',
         cell: info => <span className="name-cell">{info.getValue()}</span>,
@@ -188,9 +187,7 @@ export function ApiKeys() {
           );
         },
       }),
-    ],
-    [visibleKeys, copied],
-  );
+    ];
 
   const table = useReactTable({
     data: apiKeys,

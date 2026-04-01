@@ -70,7 +70,7 @@ export function useWebSocket(events: WebSocketEvents = {}) {
       setIsConnected(false);
     });
 
-    socketRef.current.on('connect_error', error => {
+    socketRef.current.on('connect_error', (error: Error) => {
       console.warn('[WebSocket] Connection error:', error.message);
     });
   }, []);
