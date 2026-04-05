@@ -23,6 +23,7 @@ import { StorageModule } from './common/storage/storage.module';
 import { StatsModule } from './modules/stats/stats.module';
 import { StatusModule } from './modules/status/status.module';
 import { CatalogModule } from './modules/catalog/catalog.module';
+import { PdfModule } from './modules/pdf/pdf.module';
 import { HooksModule } from './core/hooks';
 import { PluginsModule } from './core/plugins';
 import { PluginsApiModule } from './modules/plugins/plugins.module';
@@ -150,6 +151,7 @@ if (process.env.QUEUE_ENABLED === 'true') {
     StatsModule, // Phase 3: Statistics Dashboard
     StatusModule, // Phase 3: Status/Stories API
     CatalogModule, // Phase 3: Catalog API (WhatsApp Business)
+    PdfModule,
     PluginsApiModule, // Phase 5: Plugins API
   ],
 })
